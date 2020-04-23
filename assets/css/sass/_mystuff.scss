@@ -1,0 +1,14 @@
+body {
+  background-color: pink;
+}
+
+article {
+  h2 {
+    @apply text-5xl;
+    @apply text-red-600 font-bold;
+  }
+
+  strong {
+    @apply text-yellow-500 block bg-blue-200;
+  }
+}

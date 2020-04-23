@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+
+/*
+  The hugo partial template 'layouts/partials/css.html'
+  will transform 'assets/css/sass/_index.scss' to CSS
+  and inject it "here".
+*/

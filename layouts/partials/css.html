@@ -1,0 +1,9 @@
+{{- $tailwindbase := resources.Get "css/tailwind.css" -}}
+{{- $sass         := resources.Get "css/sass/_index.scss" | toCSS -}}
+{{- $tailwindtail := print "@tailwind utilities;" | resources.FromString "tailwindtail.css" -}}
+
+{{- $style := slice $tailwindbase $sass $tailwindtail | resources.Concat "css/fullstyle.css" -}}
+{{- $style := $style | postCSS (dict "config" "./assets/css/postcss/tailwind/postcss.config.js") -}}
+{{- $style := $style | fingerprint -}}
+
+<link rel="stylesheet" href="{{ $style.Permalink }}" data>
